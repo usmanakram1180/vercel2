@@ -1,0 +1,14 @@
+<!-- app/views/comments/_form.html.erb -->
+
+<%= turbo_frame_tag "comment_form" do %>
+  <%= form_with model: comment, url: home_comments_path(home) do |form| %>
+    
+     
+    
+   <%= form.text_area :body, placeholder: "Post your comment" %>
+   
+    <%= form.submit "Comments"%>
+  <% end %>
+<% end %>
+
+  

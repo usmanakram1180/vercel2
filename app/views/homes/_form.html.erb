@@ -1,0 +1,40 @@
+<%= form_tag({ controller: "homes", action: "create" }, method: "post", multipart: true) do %>
+												<textarea rows="2" placeholder="write something" name="home[content]"></textarea>
+												<div class="attachments">
+													<ul>
+													<li>
+														<div id="music-preview"></div>
+														<i class="bi bi-music-note-beamed"></i>
+														<label class="fileContainer">
+														<%= file_field_tag "home[music]", class: "file-input", accept: "audio/*" %>
+														</label>
+													</li>
+													<li>
+														<div id="image-preview"></div>
+														<i class="bi bi-image"></i>
+														<label class="fileContainer">
+														<%= file_field_tag "home[image]", class: "file-input", accept: "image/*" %>
+													<%= file_field_tag "home[images][]", class: "file-input", accept: "image/*", multiple: true %>
+														</label>
+													</li>
+													<li>
+														<div id="video-preview"></div>
+														<i class="bi bi-camera-reels-fill"></i>
+														<label class="fileContainer">
+														<%= file_field_tag "home[video]", class: "file-input", accept: "video/*" %>
+														</label>
+													</li>
+													<li>
+														<i class="bi bi-camera-fill"></i>
+														<label class="fileContainer">
+														<%= file_field_tag "home[photo]", class: "file-input", accept: "image/*" %>
+														</label>
+														<div id="photo-preview"></div> <!-- Container for photo preview -->
+													</li>
+													<li>
+<%= submit_tag "Post", class: "blue-button" %>
+
+													</li>
+													</ul>
+												</div>
+											<% end %>
